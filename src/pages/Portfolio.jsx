@@ -1,7 +1,10 @@
-import { lazy, Suspense } from "react"
+"use client"
+
+import { lazy, Suspense, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Helmet } from "react-helmet"
+import { useLocation } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import "../styles/Portfolio.css"
@@ -49,6 +52,23 @@ const ProjectCard = ({ project }) => {
 }
 
 const Portfolio = () => {
+  const location = useLocation()
+  const scrollRef = useRef(null)
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      scrollRef.current?.scrollIntoView({ behavior: "smooth" })
+    }
+
+    // Scroll al inicio cuando el componente se monta o la ruta cambia
+    scrollToTop()
+
+    // También intentamos scrollear después de un pequeño retraso
+    const timeoutId = setTimeout(scrollToTop, 100)
+
+    return () => clearTimeout(timeoutId)
+  }, [])
+
   const projects = [
     {
       id: 1,
@@ -96,7 +116,6 @@ const Portfolio = () => {
       tags: ["React",],
       link: "",
     },
-    
   ]
 
   const schemaData = {
@@ -139,7 +158,7 @@ const Portfolio = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
-      <div className="App portfolio-page">
+      <div className="App portfolio-page" ref={scrollRef}>
         <Header />
         <main>
           <motion.section
@@ -158,7 +177,7 @@ const Portfolio = () => {
           </motion.section>
           <section className="portfolio-grid">
             <div className="section-inner">
-             
+              <h2>Proyectos Destacados</h2>
               <div className="projects-grid">
                 {projects.map((project) => (
                   <ProjectCard key={project.id} project={project} />
@@ -166,17 +185,13 @@ const Portfolio = () => {
               </div>
             </div>
           </section>
-
-          {/*
           <Suspense fallback={<div>Cargando testimonios...</div>}>
             <LazyTestimonials />
           </Suspense>
-          */}
-           
         </main>
         <Footer />
         <motion.a
-          href="https://wa.me/5493755262680"
+          href="https://wa.me/1234567890"
           className="whatsapp-button"
           target="_blank"
           rel="noopener noreferrer"

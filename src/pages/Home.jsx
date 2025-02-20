@@ -8,6 +8,7 @@ import Hero from "../components/Hero"
 import Services from "../components/Services"
 import WhyUs from "../components/WhyUs"
 import About from "../components/About"
+import PaymentMethods from "../components/PaymentMethods"
 import Footer from "../components/Footer"
 import "../styles/Home.css"
 
@@ -81,6 +82,7 @@ const Home = () => {
           <Suspense fallback={<div>Cargando feed de Instagram...</div>}>
             <LazyInstagramFeed />
           </Suspense>
+          <PaymentMethods />
         </main>
         <Footer />
         <motion.a
