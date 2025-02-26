@@ -18,7 +18,7 @@ const WhyUs = () => {
     {
       icon: "🏆",
       title: "Experiencia Comprobada",
-      description: "Más de 10 años brindando soluciones tecnológicas.",
+      description: "Más de 6 años brindando soluciones tecnológicas.",
     },
     {
       icon: "👥",
