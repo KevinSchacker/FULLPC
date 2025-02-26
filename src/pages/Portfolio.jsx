@@ -100,6 +100,15 @@ const Portfolio = () => {
     },
     {
       id: 4,
+      title: "Landing Page con Sistema de Captación de Leads",
+      description:
+        "Sitio web moderno para un centro de estética y bienestar, desarrollado con React y Vite. La página presenta un diseño elegante, incluye un popup estratégico que ofrece un descuento del 20% a los visitantes.",
+      image: "../web-restaurante.png",
+      tags: ["React", "CSS", "API" , "responsive"],
+      link: "https://centro-belleza.netlify.app/",
+    },
+    {
+      id: 5,
       title: "Web para restaurantes",
       description:
         "Plataforma de restaurantes, con servicio de menú. *WEB EN DESARROLLO*",
@@ -108,7 +117,7 @@ const Portfolio = () => {
       link: "",
     },
     {
-      id: 5,
+      id: 6,
       title: "Blog Interactiva",
       description:
         "Plataforma de contenido sobre tecnología y programación, con funciones de newsletter. *WEB EN DESARROLLO*",
