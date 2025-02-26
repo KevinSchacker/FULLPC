@@ -1,20 +1,17 @@
 "use client"
 
 import { motion } from "framer-motion"
-<<<<<<< HEAD
-=======
 import { FaCreditCard, FaMoneyBillWave, FaUniversity } from "react-icons/fa"
->>>>>>> 268ce23 (actualizando portfolio)
 import "../styles/PaymentMethods.css"
 
 const PaymentMethods = () => {
   const paymentMethods = [
-    { icon: "./visa.png", name: "Credito" },
-    { icon: "./transfer.png", name: "Transferencia" },
-    { icon: "./cash.png", name: "Efectivo" },
-    { icon: FaCreditCard, name: "Visa" },
-    { icon: FaUniversity, name: "Transferencia" },
-    { icon: FaMoneyBillWave, name: "Efectivo" },
+    { type: "image", icon: "./visa.png", name: "Credito" },
+    { type: "image", icon: "./transfer.png", name: "Transferencia" },
+    { type: "image", icon: "./cash.png", name: "Efectivo" },
+    { type: "icon", icon: FaCreditCard, name: "Visa" },
+    { type: "icon", icon: FaUniversity, name: "Transferencia" },
+    { type: "icon", icon: FaMoneyBillWave, name: "Efectivo" },
   ]
 
   return (
@@ -30,11 +27,11 @@ const PaymentMethods = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-<<<<<<< HEAD
-              <img src={method.icon || "/placeholder.svg"} alt={method.name} width="40" height="40" />
-=======
-              <method.icon size={40} />
->>>>>>> 268ce23 (actualizando portfolio)
+              {method.type === "image" ? (
+                <img src={method.icon} alt={method.name} width="40" height="40" />
+              ) : (
+                <method.icon size={40} />
+              )}
               <span>{method.name}</span>
             </motion.div>
           ))}
@@ -45,4 +42,3 @@ const PaymentMethods = () => {
 }
 
 export default PaymentMethods
-
