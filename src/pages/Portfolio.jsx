@@ -114,7 +114,7 @@ const Portfolio = () => {
         "Plataforma de restaurantes, con servicio de menú. *WEB EN DESARROLLO*",
       image: "../web-restaurante.png",
       tags: ["React", "Node.js", "API"],
-      link: "",
+      
     },
     {
       id: 6,
@@ -123,7 +123,7 @@ const Portfolio = () => {
         "Plataforma de contenido sobre tecnología y programación, con funciones de newsletter. *WEB EN DESARROLLO*",
       image: "https://cdn.pixabay.com/photo/2020/09/27/13/15/data-5606639_1280.jpg",
       tags: ["React",],
-      link: "",
+     
     },
   ]
 
