@@ -6,9 +6,6 @@ import "../styles/PaymentMethods.css"
 
 const PaymentMethods = () => {
   const paymentMethods = [
-    { type: "image", icon: "./visa.png", name: "Credito" },
-    { type: "image", icon: "./transfer.png", name: "Transferencia" },
-    { type: "image", icon: "./cash.png", name: "Efectivo" },
     { type: "icon", icon: FaCreditCard, name: "Visa" },
     { type: "icon", icon: FaUniversity, name: "Transferencia" },
     { type: "icon", icon: FaMoneyBillWave, name: "Efectivo" },
