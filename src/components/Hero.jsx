@@ -36,7 +36,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          <a href="https://wa.me/1234567890" className="btn primary-btn" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/+5493755262680" className="btn primary-btn" target="_blank" rel="noopener noreferrer">
             Contáctanos
           </a>
           <a href="#why-us" className="btn secondary-btn">
