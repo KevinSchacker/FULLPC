@@ -61,7 +61,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="https://wa.me/5493755262680" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+              <a href="https://wa.me/+5493755262680" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                 Contáctanos
               </a>
             </li>

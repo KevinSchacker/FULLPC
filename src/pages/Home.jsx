@@ -26,16 +26,14 @@ const Home = () => {
       "FULL PC ofrece soluciones tecnológicas integrales, incluyendo reparación de PCs, instalación de cámaras de seguridad y desarrollo web profesional.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Calle Principal 123",
-      addressLocality: "Ciudad",
-      addressRegion: "Región",
-      postalCode: "12345",
-      addressCountry: "País",
+      addressLocality: "Oberá",
+      addressRegion: "Misiones",
+      postalCode: "3360",
+      addressCountry: "Argentina",
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-234-567-8900",
-      contactType: "customer service",
+      telephone: "+5493755262680",
     },
     sameAs: [
       "https://www.facebook.com/fullpc",
@@ -86,7 +84,7 @@ const Home = () => {
         </main>
         <Footer />
         <motion.a
-          href="https://wa.me/1234567890"
+          href="https://wa.me/+5493755262680"
           className="whatsapp-button"
           target="_blank"
           rel="noopener noreferrer"
