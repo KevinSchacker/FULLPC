@@ -1,3 +1,5 @@
+"use client"
+
 import { Link } from "react-router-dom"
 import "../styles/Footer.css"
 
@@ -7,26 +9,51 @@ const Footer = () => {
       <div className="section-inner">
         <div className="footer-content">
           <div className="footer-brand">
-            <h3>FULL PC</h3>
+            <Link to="/" className="footer-logo">
+              <img src="/logo1.png" alt="FULL PC Logo" />
+            </Link>
             <div className="footer-social">
-              <a href="https://www.facebook.com/profile.php?id=100063469631719" aria-label="Facebook">
+              <a href="#" aria-label="Facebook">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="https://www.instagram.com/full_pcs/" aria-label="Instagram">
+              <a href="#" aria-label="Instagram">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
           </div>
           <nav className="footer-nav">
-            <Link to="/">Inicio</Link>
-            <Link to="/#services">Servicios</Link>
-            <Link to="/#about">Nosotros</Link>
-            <Link to="/#contact">Contacto</Link>
+            <Link
+              to="/#services"
+              onClick={() => {
+                if (window.location.pathname === "/") {
+                  document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
+                } else {
+                  window.location.href = "/#services"
+                }
+              }}
+            >
+              Servicios
+            </Link>
+            <Link
+              to="/#about"
+              onClick={() => {
+                if (window.location.pathname === "/") {
+                  document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+                } else {
+                  window.location.href = "/#about"
+                }
+              }}
+            >
+              Nosotros
+            </Link>
+            <Link to="/portfolio" onClick={() => window.scrollTo(0, 0)}>
+              Proyectos
+            </Link>
           </nav>
         </div>
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} FULL PC. Todos los derechos reservados.</p>
-          <p>&copy; Schacker Kevin Leonardo</p>
+          <p>© Schacker Kevin Leonardo</p>
         </div>
       </div>
     </footer>

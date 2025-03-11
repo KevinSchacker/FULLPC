@@ -118,11 +118,12 @@ const Portfolio = () => {
     },
     {
       id: 6,
-      title: "Blog Interactiva",
+      title: "Web Pasteleria",
       description:
-        "Plataforma de contenido sobre tecnología y programación, con funciones de newsletter. *WEB EN DESARROLLO*",
-      image: "https://cdn.pixabay.com/photo/2020/09/27/13/15/data-5606639_1280.jpg",
-      tags: ["React",],
+        "Landing creada para pasteleria con informacion, catalogo de productos con detalle, contacto facil por whatsapp",
+      image: "../pasteleria.png",
+      tags: ["React","ccs","Resp"],
+      link: "https://pasteleria-prueba.netlify.app/",
      
     },
   ]

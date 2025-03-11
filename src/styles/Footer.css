@@ -8,24 +8,32 @@
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 2rem;
 }
 
 .footer-brand {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
 }
 
-.footer-brand h3 {
-  font-size: 1.5rem;
-  color: var(--text-light);
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer-social {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .footer-social a {
@@ -42,6 +50,8 @@
 .footer-nav {
   display: flex;
   gap: 2rem;
+  align-items: center;
+  padding-top: 1rem; /* Añadido para alinear mejor con el logo */
 }
 
 .footer-nav a {
@@ -59,6 +69,11 @@
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.6);
+  margin-top: 2rem;
+}
+
+.footer-bottom p {
+  margin: 0.5rem 0;
 }
 
 @media (max-width: 768px) {
@@ -68,14 +83,34 @@
     text-align: center;
   }
 
+  .footer-brand {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-logo img {
+    height: 70px; /* Tamaño más pequeño en móvil pero manteniendo la proporción */
+  }
+
   .footer-nav {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding-top: 0;
   }
 
   .footer-social {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .footer-logo img {
+    height: 60px; /* Tamaño más pequeño en pantallas muy pequeñas */
   }
 }
 

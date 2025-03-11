@@ -72,7 +72,7 @@ const WhyUs = () => {
             <p>Proyectos Completados</p>
           </div>
           <div className="stat-item">
-            <h4>6+</h4>
+            <h4>+6</h4>
             <p>Años de Experiencia</p>
           </div>
         </motion.div>

@@ -35,7 +35,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-content">
         <Link to="/" className="logo" onClick={closeMenu}>
-          <img src="/icon.jpg" alt="FULL PC Logo" />
+          <img src="/logo1.png" alt="FULL PC Logo" />
         </Link>
         <button className={`menu-toggle ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu} aria-label="Toggle menu">
           <span className="hamburger-line"></span>
