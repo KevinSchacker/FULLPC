@@ -1,0 +1,240 @@
+.carousel-section {
+  background: var(--background-dark);
+  padding: 80px 0; /* AMPLIAR CARRUSEL: Aumentar padding vertical (ej: 120px 0) para más espacio arriba/abajo */
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 255, 140, 0.05), transparent);
+  pointer-events: none;
+}
+
+.carousel-container {
+  max-width: 1400px; /* AMPLIAR CARRUSEL: Aumentar max-width (ej: 1400px) para carrusel más ancho */
+  margin: 0 auto;
+  padding: 0 80px; /* AMPLIAR CARRUSEL: Ajustar padding horizontal si cambias max-width */
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--card-background);
+  border: 1px solid rgba(0, 255, 140, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  height: 550px; /* AMPLIAR CARRUSEL: ¡PRINCIPAL! Aumentar altura (ej: 550px, 600px) para carrusel más alto */
+}
+
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem; /* AMPLIAR CARRUSEL: Aumentar gap (ej: 4rem, 5rem) para más espacio entre texto e imagen */
+  padding: 3rem; /* AMPLIAR CARRUSEL: Aumentar padding (ej: 4rem, 5rem) para más espacio interno */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.slide-text {
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.slide-text h2 {
+  font-size: clamp(2rem, 4vw, 3rem); /* AMPLIAR CARRUSEL: Aumentar tamaños (ej: clamp(2.5rem, 5vw, 4rem)) para texto más grande */
+  color: var(--primary-color);
+  margin-bottom: 0.5rem; /* AMPLIAR CARRUSEL: Aumentar margin-bottom para más espacio entre elementos */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.slide-text h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem); /* AMPLIAR CARRUSEL: Aumentar tamaños para subtítulo más grande */
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem; /* AMPLIAR CARRUSEL: Aumentar margin-bottom para más espacio */
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.slide-text p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem); /* AMPLIAR CARRUSEL: Aumentar tamaños para párrafo más grande */
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2rem; /* AMPLIAR CARRUSEL: Aumentar margin-bottom para más espacio antes del botón */
+  flex-grow: 1;
+}
+
+.slide-button-container {
+  margin-top: auto;
+}
+
+.slide-button {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--text-dark);
+  padding: 1rem 2rem; /* AMPLIAR CARRUSEL: Aumentar padding (ej: 1.2rem 2.5rem) para botón más grande */
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem; /* AMPLIAR CARRUSEL: Aumentar font-size (ej: 1.1rem) para texto de botón más grande */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.slide-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 255, 140, 0.3);
+}
+
+.slide-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px; /* AMPLIAR CARRUSEL: Aumentar altura (ej: 350px, 400px) para imagen más grande */
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Controles de navegación */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 255, 140, 0.2);
+  border: none;
+  color: var(--primary-color);
+  width: 50px; /* AMPLIAR CARRUSEL: Aumentar width/height (ej: 60px) para flechas más grandes */
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem; /* AMPLIAR CARRUSEL: Aumentar font-size (ej: 1.4rem) para iconos más grandes */
+  transition: all 0.3s ease;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-nav:hover {
+  background: var(--primary-color);
+  color: var(--text-dark);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+  left: -60px; /* AMPLIAR CARRUSEL: Ajustar posición si cambias el ancho del contenedor */
+}
+
+.carousel-nav.next {
+  right: -60px; /* AMPLIAR CARRUSEL: Ajustar posición si cambias el ancho del contenedor */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-section {
+    padding: 60px 0; /* AMPLIAR CARRUSEL: Aumentar padding vertical en tablet */
+  }
+
+  .carousel-container {
+    padding: 0 60px;
+  }
+
+  .carousel-wrapper {
+    height: 500px; /* AMPLIAR CARRUSEL: Aumentar altura para tablet (ej: 550px, 600px) */
+  }
+
+  .slide-content {
+    grid-template-columns: 1fr;
+    gap: 2rem; /* AMPLIAR CARRUSEL: Aumentar gap en móvil */
+    padding: 2rem; /* AMPLIAR CARRUSEL: Aumentar padding en móvil */
+    text-align: center;
+  }
+
+  .slide-text {
+    order: 2;
+  }
+
+  .slide-image {
+    order: 1;
+    height: 200px; /* AMPLIAR CARRUSEL: Aumentar altura de imagen en tablet (ej: 250px) */
+  }
+
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .carousel-nav.prev {
+    left: -50px;
+  }
+
+  .carousel-nav.next {
+    right: -50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 0 20px;
+  }
+
+  .carousel-wrapper {
+    height: 450px; /* AMPLIAR CARRUSEL: Aumentar altura para móvil (ej: 500px) */
+  }
+
+  .slide-content {
+    padding: 1.5rem; /* AMPLIAR CARRUSEL: Aumentar padding en móvil pequeño */
+  }
+
+  .slide-image {
+    height: 180px; /* AMPLIAR CARRUSEL: Aumentar altura de imagen en móvil (ej: 220px) */
+  }
+
+  .carousel-nav {
+    display: none;
+  }
+}
+
+/* 
+RESUMEN PARA AMPLIAR EL CARRUSEL:
+
+1. ALTURA PRINCIPAL: Cambiar height en .carousel-wrapper (línea 32)
+2. ANCHO: Cambiar max-width en .carousel-container (línea 22)  
+3. ESPACIADO INTERNO: Cambiar padding y gap en .slide-content (líneas 45-46)
+4. TAMAÑO DE IMAGEN: Cambiar height en .slide-image (línea 120)
+5. TAMAÑO DE TEXTO: Cambiar font-size en h2, h3, p (líneas 60, 68, 76)
+6. ESPACIADO EXTERNO: Cambiar padding en .carousel-section (línea 3)
+
+EJEMPLO PARA CARRUSEL MÁS GRANDE:
+- height: 600px (en lugar de 450px)
+- max-width: 1400px (en lugar de 1200px)
+- padding: 4rem (en lugar de 3rem)
+- height imagen: 400px (en lugar de 300px)
+*/

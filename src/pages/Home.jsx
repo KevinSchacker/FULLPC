@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Helmet } from "react-helmet"
 import Header from "../components/Header"
 import Hero from "../components/Hero"
+import Carousel from "../components/Carousel"
 import Services from "../components/Services"
 import WhyUs from "../components/WhyUs"
 import About from "../components/About"
@@ -12,7 +13,6 @@ import PaymentMethods from "../components/PaymentMethods"
 import Footer from "../components/Footer"
 import "../styles/Home.css"
 
-const LazyTestimonials = lazy(() => import("../components/Testimonials"))
 const LazyInstagramFeed = lazy(() => import("../components/InstagramFeed"))
 
 const Home = () => {
@@ -26,14 +26,16 @@ const Home = () => {
       "FULL PC ofrece soluciones tecnológicas integrales, incluyendo reparación de PCs, instalación de cámaras de seguridad y desarrollo web profesional.",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Oberá",
-      addressRegion: "Misiones",
-      postalCode: "3360",
-      addressCountry: "Argentina",
+      streetAddress: "Calle Principal 123",
+      addressLocality: "Ciudad",
+      addressRegion: "Región",
+      postalCode: "12345",
+      addressCountry: "País",
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+5493755262680",
+      telephone: "+1-234-567-8900",
+      contactType: "customer service",
     },
     sameAs: [
       "https://www.facebook.com/fullpc",
@@ -71,12 +73,10 @@ const Home = () => {
         <Header />
         <main>
           <Hero />
+          <Carousel />
           <Services />
           <WhyUs />
           <About />
-          <Suspense fallback={<div>Cargando testimonios...</div>}>
-            <LazyTestimonials />
-          </Suspense>
           <Suspense fallback={<div>Cargando feed de Instagram...</div>}>
             <LazyInstagramFeed />
           </Suspense>
@@ -84,7 +84,7 @@ const Home = () => {
         </main>
         <Footer />
         <motion.a
-          href="https://wa.me/+5493755262680"
+          href="https://wa.me/1234567890"
           className="whatsapp-button"
           target="_blank"
           rel="noopener noreferrer"
@@ -100,4 +100,3 @@ const Home = () => {
 }
 
 export default Home
-
