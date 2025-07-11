@@ -158,7 +158,7 @@ const CamarasSeguridad = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <a
-                  href="https://wa.me/1234567890"
+                  href="https://wa.me/+5493755262680"
                   className="btn primary-btn"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -184,7 +184,7 @@ const CamarasSeguridad = () => {
               >
                 <h2>Hacé tu cotización en 3 simples pasos</h2>
                 <p>¡Es gratis y sin compromiso!</p>
-                <a href="https://wa.me/1234567890" className="cta-button" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/+5493755262680" className="cta-button" target="_blank" rel="noopener noreferrer">
                   Cotizar Online →
                 </a>
               </div>
@@ -283,7 +283,7 @@ const CamarasSeguridad = () => {
                         ))}
                       </ul>
                       <a
-                        href="https://wa.me/1234567890"
+                        href="https://wa.me/+5493755262680"
                         className="product-button"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -311,7 +311,7 @@ const CamarasSeguridad = () => {
                 <p>Contactanos para una consulta gratuita y cotización personalizada</p>
                 <div className="contact-buttons">
                   <a
-                    href="https://wa.me/1234567890"
+                    href="https://wa.me/+5493755262680"
                     className="contact-btn whatsapp"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -319,7 +319,7 @@ const CamarasSeguridad = () => {
                     <i className="fab fa-whatsapp"></i>
                     Consultar por WhatsApp
                   </a>
-                  <a href="tel:+1234567890" className="contact-btn phone">
+                  <a href="tel:+543755262680" className="contact-btn phone">
                     <i className="fas fa-phone"></i>
                     Llamar Ahora
                   </a>
@@ -332,7 +332,7 @@ const CamarasSeguridad = () => {
 
         {/* WhatsApp Float Button */}
         <motion.a
-          href="https://wa.me/1234567890"
+          href="https://wa.me/+5493755262680"
           className="whatsapp-button"
           target="_blank"
           rel="noopener noreferrer"
