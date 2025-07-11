@@ -10,37 +10,40 @@ const Carousel = () => {
   const banners = [
     {
       id: 1,
-      title: "Reparación de PCs",
-      subtitle: "Servicio Técnico Especializado",
-      description: "Diagnóstico • Reparación express • Instalacion Remota • Garantía ",
+      title: "Reparación de PCs 🛠️",
+      subtitle: "Servicio Técnico Especializado 💻",
+      description:
+        "🔍 Diagnóstico preciso\n⚡ Reparación express\n📡 Instalación remota\n✅ Garantía incluida\n💳 Pagos con tarjeta de crédito",
       image: "/prueba-carrusel.png",
       buttonText: "Solicitar Servicio",
       buttonLink: "https://wa.me/1234567890",
     },
     {
       id: 2,
-      title: "Cámaras de Seguridad",
-      subtitle: "Protege lo que más Importa",
-      description: "Instalación profesional • Monitoreo 24/7 • Tecnología FHD • Garantía",
+      title: "Cámaras de Seguridad 🔒",
+      subtitle: "Protege lo que más Importa 🏠",
+      description:
+        "🧰 Instalación profesional\n👁️ Monitoreo 24/7\n📷 Tecnología FHD\n✅ Garantía total\n💳 Pagos con tarjeta de crédito",
       image: "/prueba-carrusel2.png",
       buttonText: "Cotizar Instalación",
       buttonLink: "https://wa.me/+5493755262680",
     },
     {
       id: 3,
-      title: "Desarrollo Web",
-      subtitle: "Tu Presencia Digital",
-      description: "Diseño moderno • SEO optimizado • Responsive design",
+      title: "Desarrollo Web 🌐",
+      subtitle: "Tu Presencia Digital 🚀",
+      description:
+        "🎨 Diseño moderno\n🔍 SEO optimizado\n📱 Diseño responsive\n💳 Pagos con tarjeta de crédito",
       image: "/prueba-carrusel1.png",
       buttonText: "Ver Proyectos",
       buttonLink: "/portfolio",
     },
-  ]
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % banners.length)
-    }, 5000) // Cambia cada 5 segundos
+    }, 5000)
 
     return () => clearInterval(timer)
   }, [banners.length])
@@ -68,13 +71,26 @@ const Carousel = () => {
             >
               <div className="slide-content">
                 <div className="slide-text">
-                  <motion.h2 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
+                  <motion.h2
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
                     {banners[currentSlide].title}
                   </motion.h2>
-                  <motion.h3 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
+                  <motion.h3
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
                     {banners[currentSlide].subtitle}
                   </motion.h3>
-                  <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
+                  <motion.p
+                    style={{ whiteSpace: "pre-line" }}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                  >
                     {banners[currentSlide].description}
                   </motion.p>
                   <motion.div
