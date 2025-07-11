@@ -1,0 +1,400 @@
+/* Estilos específicos solo para la página de cámaras - evitar conflictos */
+.cameras-page {
+  padding-top: 80px;
+  background: var(--background-dark);
+  min-height: 100vh;
+  color: var(--text-light);
+}
+
+/* Hero Section - Con imagen de fondo muy transparente */
+.cameras-page .cameras-hero {
+  background: linear-gradient(135deg, var(--background-dark), var(--card-background));
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Imagen de fondo muy transparente - solo para el hero */
+.cameras-page .cameras-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/fondo-camara.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.08; /* Muy transparente - apenas visible */
+  z-index: 1;
+}
+
+/* Overlay con gradiente encima de la imagen */
+.cameras-page .cameras-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 255, 140, 0.1), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cameras-page .hero-content {
+  position: relative;
+  z-index: 3; /* Por encima de la imagen y el overlay */
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.cameras-page .hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  background: linear-gradient(45deg, #fff, var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
+}
+
+.cameras-page .hero-content p {
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para mejor legibilidad */
+}
+
+.cameras-page .hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* CTA Section */
+.cameras-page .cta-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cameras-page .cta-content h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.cameras-page .cta-content p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.cameras-page .cta-button {
+  display: inline-block;
+  background: var(--text-dark);
+  color: var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cameras-page .cta-button:hover {
+  background: var(--background-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Installation Types */
+.cameras-page .installation-types {
+  padding: 80px 0;
+  background: var(--background-dark);
+}
+
+.cameras-page .installation-types h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+.cameras-page .types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.cameras-page .type-card {
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 140, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cameras-page .type-card:hover {
+  transform: translateY(-10px);
+  background: var(--card-hover);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 255, 140, 0.1);
+}
+
+.cameras-page .type-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.cameras-page .type-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.cameras-page .type-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Features Section */
+.cameras-page .features-section {
+  padding: 80px 0;
+  background: var(--card-background);
+}
+
+.cameras-page .features-section h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+.cameras-page .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cameras-page .feature-card {
+  background: var(--background-dark);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 140, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cameras-page .feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 255, 140, 0.1);
+}
+
+.cameras-page .feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cameras-page .feature-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.cameras-page .feature-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Products Section */
+.cameras-page .products-section {
+  padding: 80px 0;
+  background: var(--background-dark);
+}
+
+.cameras-page .products-section h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+.cameras-page .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cameras-page .product-card {
+  background: var(--card-background);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 140, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cameras-page .product-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 40px rgba(0, 255, 140, 0.1);
+}
+
+.cameras-page .product-image {
+  height: 200px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cameras-page .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.cameras-page .product-content {
+  padding: 1.5rem;
+}
+
+.cameras-page .product-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.cameras-page .product-features {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.cameras-page .product-features li {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cameras-page .product-button {
+  display: block;
+  background: var(--primary-color);
+  color: var(--text-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cameras-page .product-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Contact Section */
+.cameras-page .contact-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--card-background), var(--background-dark));
+  text-align: center;
+}
+
+.cameras-page .contact-content h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.cameras-page .contact-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.cameras-page .contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cameras-page .contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.cameras-page .contact-btn.whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.cameras-page .contact-btn.phone {
+  background: var(--primary-color);
+  color: var(--text-dark);
+}
+
+.cameras-page .contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cameras-page .cameras-hero {
+    min-height: 60vh;
+  }
+
+  /* Imagen de fondo un poco más visible en móvil para mejor efecto */
+  .cameras-page .cameras-hero::before {
+    opacity: 0.12;
+  }
+
+  .cameras-page .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cameras-page .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cameras-page .types-grid,
+  .cameras-page .features-grid,
+  .cameras-page .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cameras-page .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cameras-page .contact-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}

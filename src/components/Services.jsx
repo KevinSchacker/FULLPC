@@ -10,22 +10,29 @@ const Services = () => {
       title: "Reparación de PCs",
       description:
         "Solucionamos problemas de hardware y software en computadoras de escritorio y laptops con rapidez y eficiencia.",
-      link: "/servicios/reparacion-pcs",
-      showProjectsButton: false,
     },
     {
       title: "Cámaras de Seguridad",
       description: "Diseñamos e instalamos sistemas de vigilancia de última generación para hogares y negocios.",
-      link: "/servicios/camaras-seguridad",
-      showProjectsButton: false,
+      showProjectsButton: true,
+      buttonText: "Ver Cámaras",
+      buttonLink: "/camaras-seguridad",
     },
     {
       title: "Desarrollo Web",
       description: "Creamos sitios web modernos, responsivos y optimizados para impulsar tu presencia en línea.",
-      link: "/servicios/desarrollo-web",
       showProjectsButton: true,
+      buttonText: "Ver proyectos",
+      buttonLink: "/portfolio",
     },
   ]
+
+  const handleLinkClick = () => {
+    // Scroll al inicio cuando se hace clic en el enlace
+    setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 100)
+  }
 
   return (
     <section className="services" id="services">
@@ -42,13 +49,13 @@ const Services = () => {
             >
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <div className="service-buttons">
-                {service.showProjectsButton && (
-                  <Link to="/portfolio" className="service-link projects-link">
-                    Ver proyectos
+              {service.showProjectsButton && (
+                <div className="service-buttons">
+                  <Link to={service.buttonLink} className="service-link projects-link" onClick={handleLinkClick}>
+                    {service.buttonText}
                   </Link>
-                )}
-              </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -58,4 +65,3 @@ const Services = () => {
 }
 
 export default Services
-
